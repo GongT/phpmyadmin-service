@@ -15,10 +15,7 @@ server {
 	proxy_set_header X-Http2 "$http2$http_x_http2";
 	proxy_set_header Host $host;
 	
-	location ^~ /js {
-		break;
-	}
-	location ^~ /themes {
+	location ~ \\.(js|css|gif|png|jpg)$ {
 		break;
 	}
 	
