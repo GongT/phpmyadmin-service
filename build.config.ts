@@ -2,6 +2,7 @@
 import {JsonEnv} from "@gongt/jenv-data";
 import {EPlugins, MicroBuildConfig} from "./.micro-build/x/microbuild-config";
 import {MicroBuildHelper} from "./.micro-build/x/microbuild-helper";
+
 declare const build: MicroBuildConfig;
 declare const helper: MicroBuildHelper;
 /*
@@ -65,7 +66,7 @@ build.onConfig((isBuild) => {
 	helper.createTextFile(create(
 		projectName,
 		'/data/document-root',
-		'/host' + process.env.DOCUMENT_ROOT,
+		process.env.DOCUMENT_ROOT,
 		listenPort,
 	)).save('config/conf.d/01-app.conf');
 });
